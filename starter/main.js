@@ -1,172 +1,116 @@
-const mainContainerTag = document.querySelector(".main-container")
-// variables et conditions //
-// exo let + const //
-let firstPart = `Je m'appelle`
-const firstname = `Damien`
+//changer le background en boucle en cliquant sur les boutons//
 
-// mainContainerTag.textContent = firstPart + ' ' + firstname
+// const mainBtn = document.querySelector(".main-btn");
+// const mainContainer = document.querySelector(".main-container");
 
-// deuxieme methode avec $ //
-let age = 25
-const brotherAge = 26
-// let result = `Bonjour ${firstPart} ${firstname} et j'ai ${age} ans`
+// mainBtn.addEventListener("click", onClick);
 
-// if(brotherAge > age){
-//     result = `Mon frère est plus agé de ${brotherAge-age} ans.`
-//     // } else{
-//     //     result = `Mon frère est moins agé de ${age-brotherAge} ans.`
-//     // }
-// }
-let myBoolean = brotherAge>age;
+// let fullOpacity = 1;
+// let nbClick = 0;
+// const colors = ["green", "black", "red", "purple", "blue"];
 
-// if(brotherAge %2===0){
-//     result = `Mon frère à un âge pair`
-// } else{
-//     result = `Mon frère à un âge impair`
-// }
-// if(myBoolean){
-//     result = myBoolean
-// } else{
-//     result = myBoolean
-// }
-// mainContainerTag.textContent = result
-
-// Tableau //
-
-const myArray = ['Jymmo', 'Lilo', 'René', 'Damdam']
-
-// recupere la dernière valeur d'un tableau //
-// mainContainerTag.textContent = myArray[myArray.length-1]
-
-// {} <-- défini un objet
-const identity_1 = {
-    firstname: "Damdam ",
-    lastname: "Fasquelle",
-    age: 25,
-    size: 1.78,
-    weight: 95,
-    town: {name:"Bordeaux", population: 250000, superficy: 49.36} 
-}
-const identity_2 = {
-    firstname: "Jimmo",
-    lastname: "Bertrud",
-    age: 16,
-    size: 1.81,
-    weight: 80,
-    town: {name:"MonCul", population: 1715, superficy: 32.22} 
-}
-
-const identity_3 = {
-    firstname: "René",
-    lastname: "Jodar",
-    age: 25,
-    size: 170,
-    town: {name:"Nouvelle-calédonie", population: 271000} 
-}
-// mainContainerTag.textContent = `Bonjour, je m'appelle ${identity_1.firstname + identity_1.lastname}, j'ai ${identity_1.age} ans et je vis à ${identity_1.town}.`
-
-let olderIdentity, youngerIdentity;
-if(identity_1.age>identity_2.age){
-    olderIdentity = identity_1
-    youngerIdentity = identity_2
-} else{
-    olderIdentity = identity_2
-    youngerIdentity = identity_1
-}
-
-// mainContainerTag.textContent = `M. ${olderIdentity.lastname} est le plus agé. Il a ${olderIdentity.age - youngerIdentity.age} ans de plus que M. ${youngerIdentity.lastname}.`
-
-let bigsize, smallsize;
-
-if(identity_1.size>identity_2.size){
-    bigsize = identity_1
-    smallsize = identity_2
-} else{
-    bigsize = identity_2
-    smallsize = identity_1
-}
-
-// mainContainerTag.textContent = `M. ${bigsize.lastname} est le plus grand. Il mesure ${bigsize.size - smallsize.size} centimètres de plus que M.${smallsize.lastname}.`
-
-
-// intégration d'une variable dans une variable, selectionbis avec deux fois dazdazd.dadazd.dazdaz //
-let personInBigTown, personInSmallTown
-
-if(identity_1.town.population>identity_2.town.population){
-    personInBigTown = identity_1
-    personInSmallTown = identity_2
-} else{
-    personInBigTown = identity_2
-    personInSmallTown = identity_1
-}
-
-// mainContainerTag.textContent = `M.${personInBigTown.firstname} habite ${personInBigTown.town.name} qui est plus grande que ${personInSmallTown.town.name}.`
-
-
-// calcul imc , donc on intègre un calcul dans une variable//
-
-
-//formule de l'IMC : weight / size **2 //
-
-// let imcBig, imcSmall, imcIdentity_1, imcIdentity_2
-
-// imcIdentity_1 = identity_1.weight / (identity_1.size**2)
-// imcIdentity_2 = identity_2.weight / (identity_2.size**2)
-
-// if(imcIdentity_1>imcIdentity_2){
-//     imcBig = identity_1
-//     imcSmall = identity_2
-// } else{
-//     imcBig = identity_2
-//     imcSmall = identity_1
+// function onClick(event) {
+//   nbClick++;
+//   if (nbClick > colors.length) nbClick = 0;
+//   mainBtn.style.opacity = fullOpacity - 0.2 * nbClick;
+//   mainContainer.style.backgroundColor = colors[nbClick];
 // }
 
-// mainContainerTag.textContent = `C'est ${imcBig.firstname} qui à l'IMC la plus élevée.`
+//modifie la couleur du background en cliquant sur le contenu de la div//
 
+//   Facile plus simple sans data color dans le html
+// }
 
-// on retire 2 variable et on la créer directement dans notre calcul //
+// const mainContainer = document.querySelector(".main-container");
+// const mainBtn = document.querySelectorAll(".main-btn");
 
-let imcBig, imcSmall
+// mainBtn[0].addEventListener("click", onClick);
+// mainBtn[1].addEventListener("click", onClick);
+// mainBtn[2].addEventListener("click", onClick);
 
-identity_1.imc = identity_1.weight / (identity_2.size**2)
-identity_2.imc = identity_2.weight / (identity_2.size**2)
+// function onClick(event) {
+// mainContainer.style.backgroundColor = event.target.textContent;
 
-if(identity_1.imc>identity_2.imc){
-    imcBig = identity_1
-    imcSmall = identity_2
-} else{
-    imcBig = identity_2
-    imcSmall = identity_1
-}
+// utilise cette fois ci un for pour combiner nos couleurs puis un data-color assignant un attribut dans notre html pour target directement la couleur
 
-// mainContainerTag.textContent = `C'est ${imcBig.firstname} qui à l'IMC la plus élevée : ${imcBig.imc}`
+// for (let i = 0; i < mainBtn.length; i++) {
+//   mainBtn[i].addEventListener("click", onClick);
+// }
+// function onClick(event) {
+//   mainContainer.style.backgroundColor = event.target.getAttribute("data-color");
+// }
 
-// déclarer une fonction //
+//changer la couleur de fond avec la valeur imbriger dans le input et valider avec enter //
 
-function calculIMC(pers){
-    const imc = pers.weight / pers.size **2
-    return imc;
-}
+// const mainBtn = document.querySelectorAll(".main-btn");
+// const mainContainer = document.querySelector(".main-container");
+// const input = document.querySelector("input");
 
-// calcul densité de la population avec l'aide d'une fonction //
+// input.addEventListener("change", onClick);
 
-function calculDensity(pers){
-    let result = pers.town.density = Math.round(pers.town.population / pers.town.superficy)
-    
-}
+// function onClick(event) {
+//   mainContainer.style.backgroundColor = input.value;
+// }
 
-identity_1.density = calculDensity(identity_1)
-identity_2.density = calculDensity(identity_2)
+// const BMIData = [
+//   { name: "Maigreur", color: "midnightblue", range: [0, 18.5] },
+//   { name: "Bonne santé", color: "green", range: [18.5, 25] },
+//   { name: "Surpoids", color: "lightcoral", range: [25, 30] },
+//   { name: "Obésité modérée", color: "orange", range: [30, 35] },
+//   { name: "Obésité sévère", color: "crimson", range: [35, 40] },
+//   { name: "Obésité morbide", color: "purple", range: 40 },
+// ];
 
- let hightDensity, smallDensity
-if(identity_1.town.density>identity_2.town.density){
+// //Dans un premier temps déclarer toute les variables que tu vas apporter ton html //
+// const weight = document.querySelector("#weight");
+// const height = document.querySelector("#height");
+// const formBtn = document.querySelector(".form-btn");
+// const bmiValue = document.querySelector(".bmi-value");
+// const description = document.querySelector(".description");
 
-    hightDensity = identity_1
-    smallDensity = identity_2
-} else{
-    hightDensity = identity_2
-    smallDensity = identity_1
-}
+// formBtn.addEventListener("click", onBtnClick);
 
+// function onBtnClick() {
+//   const wValue = weight.value;
+//   const hValue = height.value;
+//   //le !wvalue, dis : si wValue n'est pas défini alors -> error//
+//   //comme cela , impossible de rentrer une valeur vide //
 
-mainContainerTag.textContent = `C'est ${hightDensity.town.name} qui a le plus grande densité d'habitant au km carrée de ${hightDensity.town.density} au mètre carrée`
+//   if (!wValue || !hValue || wValue <= 0 || hValue <= 0) {
+//     handleError();
+//     return;
+//   }
+
+//   const bmi = (wValue / (hValue / 100) ** 2).toFixed(1); //car conversion en cm²  //ou Math.pow((hValue / 100), 2)
+//   displayImc(bmi);
+//   displayDescription(bmi); //fonction qui va permettre d'afficher la valeur sur mon formulaire//
+// }
+// function displayImc(valImc) {
+//   bmiValue.textContent = valImc;
+// }
+// //on peut mettre des fonctions dans des fonctions, cela permet d'avoir une meilleur visibilité du code, chaque fonction doit avoir une tache//
+// function handleError() {
+//   // ou alert("Remplissez correctement le formulaire")//
+//   description.textContent = "Remplissez correctement le formulaire";
+// }
+
+// //maintenant plus que afficher la santé//
+
+// function displayDescription(valDesc) {
+//   let rank;
+
+//   for (let i = 0; i < BMIData.length; i++) {
+//     if (valDesc >= BMIData[i].range[0] && valDesc < BMIData[i].range[1]) {
+//       rank = BMIData[i];
+//       break;
+//     } else if (
+//       typeof BMIData[i].range === "number" &&
+//       valDesc >= BMIData[i].range
+//     ) {
+//       rank = BMIData[i];
+//     }
+//   }
+//   bmiValue.style.color = rank.color;
+//   description.textContent = valDesc;
+//   description.textContent = rank.name;
+// }
