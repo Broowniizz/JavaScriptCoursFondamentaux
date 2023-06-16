@@ -28,18 +28,18 @@
 
 //3e exo, changer la couleur du background avec les input //
 
-// const mainInputRed = document.querySelector(".inputRed");
-// const mainInputGreen = document.querySelector(".inputGreen");
-// const mainInputBlue = document.querySelector(".inputBlue");
-// const mainContainer = document.querySelector(".main-container");
+const mainInputRed = document.querySelector(".inputRed");
+const mainInputGreen = document.querySelector(".inputGreen");
+const mainInputBlue = document.querySelector(".inputBlue");
+const mainContainer = document.querySelector(".main-container");
 
-// mainInputRed.addEventListener("change", onClick);
-// mainInputGreen.addEventListener("change", onClick);
-// mainInputBlue.addEventListener("change", onClick);
+mainInputRed.addEventListener("change", onClick);
+mainInputGreen.addEventListener("change", onClick);
+mainInputBlue.addEventListener("change", onClick);
 
-// function onClick(event) {
-//   mainContainer.style.backgroundColor = `rgb(${mainInputRed.value},${mainInputGreen.value},${mainInputBlue.value})`;
-// }
+function onClick(event) {
+  mainContainer.style.backgroundColor = `rgb(${mainInputRed.value},${mainInputGreen.value},${mainInputBlue.value})`;
+}
 
 // cours ajouter un div class dans notre html//
 
@@ -114,6 +114,7 @@ function onBtnClickInput(divCreateRandom) {
   if (nbClick === 16) {
     container.textContent = "";
     nbClick = 0;
+    shuffle(arr);
     // newDiv2.forEach((element) => {
     //   element.remove();
     // });
