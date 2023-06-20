@@ -23,3 +23,13 @@
 // function getRandomColor() {
 //     return `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)})`
 // }
+
+const mainContainer = document.querySelector(".background-container");
+const btn = document.querySelector(".btnBackground");
+
+const colors = ["red", "purple", "blue", "black", "white", "pink", "green"];
+
+btn.addEventListener("click", (e) => {
+  mainContainer.style.backgroundColor =
+    colors[Math.floor(Math.random() * colors.length)];
+});
