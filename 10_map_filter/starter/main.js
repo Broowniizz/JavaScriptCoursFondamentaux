@@ -16,9 +16,7 @@ console.log(movies[movies.length - 1].title);
 
 function bestRate() {
   movies.sort((a, b) => {
-    if (a.rate < b.rate) return +1;
-    if (a.rate > b.rate) return -1;
-    return 0;
+    return b.rate - a.rate;
   });
 }
 bestRate();
@@ -43,6 +41,15 @@ movies.forEach((element) => {
 });
 console.log(actorsMovies);
 
+//avec map et filter//
+const result = movies.filter((movies) => movies.actors.length >= 3);
+const result1 = result.map((e) => {
+  return e.title;
+});
+console.log(result1);
+
+//avec reduce//
+
 // 1. Ecrire une fonction qui prend en parametre le tableau movies et qui retourne un nouveau tableau de tous les titres de films
 
 function titleMovie(movies) {
@@ -65,6 +72,14 @@ function yearMovies(year, movies) {
 }
 console.log(yearMovies("1994", movies));
 
+//avec filter et map//
+
+console.log("year movies filter" + " " + year("1994", movies));
+function year(year, movies) {
+  const newArr3 = movies.filter((el) => el.year == year);
+  return newArr3.map((e) => e.title);
+}
+
 // 3. Ecrire une fonction qui prend en parametre un realisateur et un tableau (movies), et qui retourne un nouveau tableau de tous les titres de films de ce realisateur
 
 function director(director, movies) {
@@ -75,3 +90,13 @@ function director(director, movies) {
   return directorTab;
 }
 console.log(director("Christopher Nolan", movies));
+
+//avec filter et map//
+
+function director2(director, movies) {
+  const newArr = movies.filter((el) => el.director.includes(director));
+  return newArr.map((e) => e.title);
+}
+console.log(
+  "director movies filter" + " " + director2("Christopher Nolan", movies)
+);

@@ -26,7 +26,22 @@ body {
   width: 150px !important;
 }
 
+.description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 30px;
+}
+
+.first-element {
+  display: flex;
+  justify-content: space-around;
+}
+.last-element {
+  display: flex;
+  justify-content: space-between;
+}
 .row {
-  display: grid;
-  gap: 40px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
 }
