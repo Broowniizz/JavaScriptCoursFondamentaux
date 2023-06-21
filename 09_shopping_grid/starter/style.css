@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+}
+
+.ratings i {
+  color: #f5b027;
+}
+
+.rate {
+  color: #f5b027;
+}
+
+.install span {
+  font-size: 12px;
+}
+
+.col-md-4 {
+  margin-top: 27px;
+}
+
+.custom-margin {
+  margin-left: 1em;
+}
+
+.form-select {
+  width: 150px !important;
+}
+
+.row {
+  display: grid;
+  gap: 40px;
+}
